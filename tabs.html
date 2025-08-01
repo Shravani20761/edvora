@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Edvora - Dashboard Tabs</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #f0f2f5;
+    color: #333;
+  }
+  nav {
+    background-color: #1a2a6c;
+    padding: 15px 30px;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .tabs {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  .tab-buttons {
+    display: flex;
+    border-bottom: 2px solid #1a2a6c;
+  }
+  .tab-buttons button {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #1a2a6c;
+    border-bottom: 3px solid transparent;
+  }
+  .tab-buttons button:hover {
+    background-color: #fdbb2d;
+    color: #1a2a6c;
+  }
+  .tab-buttons button.active {
+    border-bottom: 3px solid #fdbb2d;
+    background-color: #fdbb2d;
+    color: #1a2a6c;
+  }
+  .tab-content {
+    padding: 25px 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  Edvora
+</nav>
+
+<div class="tabs">
+  <div class="tab-buttons">
+    <button class="active" data-tab="notes">Notes</button>
+    <button data-tab="alumni">Alumni Connect</button>
+    <button data-tab="startup">Startup Info</button>
+    <button data-tab="mentorship">Project Mentorship</button>
+    <button data-tab="clubs">Clubs & Society</button>
+  </div>
+
+  <div id="notes" class="tab-content active">
+    <h2>Notes</h2>
+    <p>Here you can create, view, and manage your notes efficiently.</p>
+  </div>
+
+  <div id="alumni" class="tab-content">
+    <h2>Alumni Connect</h2>
+    <p>Connect with Edvora alumni for networking and mentorship opportunities.</p>
+  </div>
+
+  <div id="startup" class="tab-content">
+    <h2>Startup Info</h2>
+    <p>Explore resources and updates about startups within the Edvora community.</p>
+  </div>
+
+  <div id="mentorship" class="tab-content">
+    <h2>Project Mentorship</h2>
+    <p>Find mentors for your projects and enhance your learning experience.</p>
+  </div>
+
+  <div id="clubs" class="tab-content">
+    <h2>Clubs & Society</h2>
+    <p>Join clubs and societies to engage with peers and participate in activities.</p>
+  </div>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.tab-buttons button');
+  const contents = document.querySelectorAll('.tab-content');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons and contents
+      buttons.forEach(b => b.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      // Add active class to clicked button and corresponding content
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

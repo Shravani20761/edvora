@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edvora</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #367489;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .navbar .nav-buttons button {
+            padding: 8px 16px;
+            background-color: white;
+            border: none;
+            border-radius: 25px;
+            color: #367489;
+            font-size: 1.2e;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+
+        .navbar .nav-buttons button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Main content placeholder */
+        .main-content {
+            padding: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Edvora</div>
+        <div class="nav-buttons">
+            <button onclick="location.href='login.html'">Login</button>
+            <button onclick="location.href='signup.html'">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome to Edvora</h1>
+        <p>Your learning journey starts here.</p>
+    </div>
+
+</body>
+</html>
